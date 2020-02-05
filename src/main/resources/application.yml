@@ -1,0 +1,24 @@
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+server:
+  port: 8762
+spring:
+  application:
+    name: taxapy-gateway-server
+zuul:
+  ignored-services: '*'
+  routes:
+    taxi-service:
+      path: /taxi/**
+      service-id: taxapy-taxi-server
+    taxista-service:
+      path: /taxista/**
+      service-id: taxapy-taxista-server
+    usuario-service:
+      path: /usuario/**
+      service-id: taxapy-usuario-server
+    viaje-service:
+      path: /viaje/**
+      service-id: taxapy-viaje-server
