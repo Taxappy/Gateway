@@ -9,6 +9,7 @@ spring:
     name: taxapy-gateway-server
 zuul:
   ignored-services: '*'
+  ignoredHeaders: Access-Control-Allow-Credentials, Access-Control-Allow-Origin
   routes:
     taxi-service:
       path: /taxi/**
